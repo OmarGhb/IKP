@@ -3,9 +3,8 @@ var router = express.Router();
 var User = require("../models/usersModel");
 var debug = require("debug")("app:users");
 var bodyParser = require("body-parser");
-const { MongoClient, ObjectID } = require("mongodb");
+var { ObjectID } = require("mongodb");
 
-/* GET users listing. */
 router.get("/", (req, res) => {
   try {
     User.find({}, function(err, users) {
@@ -17,6 +16,7 @@ router.get("/", (req, res) => {
     res.json(err);
   }
 });
+
 router.post("/", (req, res) => {
   try {
     var user = new User(req.body);
@@ -30,18 +30,17 @@ router.post("/", (req, res) => {
     res.json(err);
   }
 });
+
 router.put("/:id", (req, res) => {
   const { id } = req.params;
-  debug(id);
-  User.findByIdAndUpdate({ _id: id }, { role: "Administrateur" }, function(
-    err,
-    user
-  ) {
+  const modifiedUser = req.body;
+  User.findByIdAndUpdate({ _id: id }, modifiedUser, function(err) {
     if (err) res.json(err);
-    res.json(user);
-    debug(user.userName + " is now an Admin");
+    debug(modifiedUser.userName + " has been updated.");
+    res.json(modifiedUser);
   });
 });
+
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
   debug(id);
@@ -51,6 +50,7 @@ router.delete("/:id", (req, res) => {
     debug(user.userName + " deleted :(");
   });
 });
+
 router.delete("/", (req, res) => {
   User.remove({}, function(err, users) {
     if (err) res.json(err);

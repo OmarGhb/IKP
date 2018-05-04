@@ -1,5 +1,50 @@
-extends layout
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  title Login/Signup
+  // Prevent the demo from appearing in search engines (REMOVE THIS)
+  meta(name='robots' content='noindex')
+  // Material Design Icons
+  link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+  // Roboto Web Font
+  link(href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en' rel='stylesheet')
+  // App CSS
+  link(type='text/css' href='stylesheets/style.min.css' rel='stylesheet')
+.row
+  .col-sm-8.col-sm-push-1.col-md-4.col-md-push-4.col-lg-4.col-lg-push-4
+    .center.m-a-2
+      .icon-block.img-circle
+        i.material-icons.md-36.text-muted lock
+    .card.bg-transparent
+      .card-header.bg-white.center
+        h4.card-title Login
+        p.card-subtitle Access your account
+      .p-a-2
+        form(action='index.html' method='get')
+          .form-group
+            input.form-control(type='email' placeholder='Email Address')
+          .form-group
+            input.form-control(type='password' placeholder='Password')
+          .form-group
+            button.btn.btn-primary.btn-block.btn-rounded(type='submit')
+              | Login
+          .center
+            a(href='#')
+              small Forgot Password?
+      .card-footer.center.bg-white
+        | Not yet a student? 
+        a(href='sign-up.html') Sign up
+// jQuery
+script(src='vendor/jquery.min.js')
+// Bootstrap
+script(src='vendor/tether.min.js')
+script(src='vendor/bootstrap.min.js')
+// AdminPlus
+script(src='vendor/adminplus.js')
+// App JS
+script(src='javascripts/main.min.js')
+// Login Controller
+script(src='controllers/loginController.js')
 
-block content
-  h1= title
-  p Welcome to #{title}
