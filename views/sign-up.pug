@@ -1,0 +1,53 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  title Login/Signup
+  // Prevent the demo from appearing in search engines (REMOVE THIS)
+  meta(name='robots' content='noindex')
+  // Material Design Icons
+  link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+  // Roboto Web Font
+  link(href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en' rel='stylesheet')
+  // App CSS
+  link(type='text/css' href='assets/css/style.min.css' rel='stylesheet')
+.row
+  .col-sm-8.col-sm-push-1.col-md-4.col-md-push-3.col-lg-4.col-lg-push-4
+    .center.m-a-2
+      .icon-block.img-circle
+        i.material-icons.md-36.text-muted edit
+    .card
+      .card-header.bg-white.center
+        h4.card-title Sign Up
+        p.card-subtitle Create a new account
+      .p-a-2
+        form(action='index.html' method='get')
+          .form-group
+            input.form-control(type='text' placeholder='Full Name')
+          .form-group
+            input.form-control(type='email' placeholder='Email')
+          .form-group
+            input.form-control(type='password' placeholder='Password')
+          .form-group
+            input.form-control(type='password' placeholder='Confirm Password')
+          .form-group.center
+            label.c-input.c-checkbox
+              input(type='checkbox' checked='')
+              span.c-indicator
+              |  I agree to the 
+              a(href='#') Terms of Use
+          p.center
+            button.btn.btn-primary.btn-rounded.btn-block(type='submit') Sign Up
+          .center
+            | Already signed up? 
+            a(href='login.html') Log in
+// jQuery
+script(src='assets/vendor/jquery.min.js')
+// Bootstrap
+script(src='assets/vendor/tether.min.js')
+script(src='assets/vendor/bootstrap.min.js')
+// AdminPlus
+script(src='assets/vendor/adminplus.js')
+// App JS
+script(src='assets/js/main.min.js')
